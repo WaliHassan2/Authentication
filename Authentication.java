@@ -23,7 +23,7 @@ public class Authentication {
 					Loop = false;
 					// determines if the correct password has already been entered for later error messages
 					JOptionPane.showMessageDialog(null, "Welcome " + corUser[u] + "!");
-					String userInput3 = (String) JOptionPane.showInputDialog(null, "Choose account type below",
+					do{String userInput3 = (String) JOptionPane.showInputDialog(null, "Choose account type below",
 							"Account Type", JOptionPane.QUESTION_MESSAGE, null, choices, choices[2]);
 					while ((userInput3 != null) && userInput3.equals(choices[u])) {
 						switch (userInput3) {
@@ -40,6 +40,7 @@ public class Authentication {
 						}
 						System.exit(0);
 					}
+					}while(Loop==false);
 				} else {
 					JOptionPane.showMessageDialog(null, "Invalid Password!", "Error", JOptionPane.ERROR_MESSAGE);
 					u++;
