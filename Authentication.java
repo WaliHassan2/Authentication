@@ -5,10 +5,15 @@ public class Authentication {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String[] corUser = { "Hollan", "Dean", "Holmes" };
+		// correct usernames
 		String[] corPass = { "123", "1234", "12345" };
+		// correct passwords
 		String[] choices = { "Admin", "Student", "Staff" };
+		// account choices
 		int u = 0;
+		// index for counter termination
 		int LIMIT = 3;
+		// limit for counter termination
 		boolean Loop = true;
 		do {
 			String userInput1 = JOptionPane.showInputDialog("Enter username");
@@ -16,6 +21,7 @@ public class Authentication {
 				String userInput2 = JOptionPane.showInputDialog("Enter password");
 				if (userInput2.equals(corPass[u])) {
 					Loop = false;
+					// determines if the correct password has already been entered for later error messages
 					JOptionPane.showMessageDialog(null, "Welcome " + corUser[u] + "!");
 					String userInput3 = (String) JOptionPane.showInputDialog(null, "Choose account type below",
 							"Account Type", JOptionPane.QUESTION_MESSAGE, null, choices, choices[2]);
